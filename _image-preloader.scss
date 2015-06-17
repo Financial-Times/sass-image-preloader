@@ -1,0 +1,11 @@
+$preloaded-images: null;
+
+@function preload-image($image-url) {
+    $preloaded-images: $preloaded-images url($image-url);
+    @return url($image-url);
+}
+
+@mixin load-images() {
+    display: none;
+    background-image: $preloaded-images;
+}
